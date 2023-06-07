@@ -27,8 +27,9 @@ public class FormSistema extends javax.swing.JFrame {
         btnBuscarhm = new javax.swing.JButton();
         btnAddhm = new javax.swing.JButton();
         btnCarrega = new javax.swing.JButton();
-        btnCarrega1 = new javax.swing.JButton();
-        btnCarrega2 = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
+        btnCarregaLinkedList = new javax.swing.JButton();
+        btnCarregaHash = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listHashTable = new javax.swing.JTextArea();
@@ -100,21 +101,30 @@ public class FormSistema extends javax.swing.JFrame {
             }
         });
 
-        btnCarrega1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btnCarrega1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javahash/clipboard.png"))); // NOI18N
-        btnCarrega1.setText("Busca Hash");
-        btnCarrega1.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvar.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javahash/clipboard.png"))); // NOI18N
+        btnSalvar.setText("Salvar Arquivo");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCarrega1ActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
 
-        btnCarrega2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btnCarrega2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javahash/clipboard.png"))); // NOI18N
-        btnCarrega2.setText("Busca LinkedList");
-        btnCarrega2.addActionListener(new java.awt.event.ActionListener() {
+        btnCarregaLinkedList.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btnCarregaLinkedList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javahash/clipboard.png"))); // NOI18N
+        btnCarregaLinkedList.setText("Busca LinkedList");
+        btnCarregaLinkedList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCarrega2ActionPerformed(evt);
+                btnCarregaLinkedListActionPerformed(evt);
+            }
+        });
+
+        btnCarregaHash.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btnCarregaHash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javahash/clipboard.png"))); // NOI18N
+        btnCarregaHash.setText("Busca Hash");
+        btnCarregaHash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarregaHashActionPerformed(evt);
             }
         });
 
@@ -123,29 +133,31 @@ public class FormSistema extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnCarrega1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCarrega2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnCarrega, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-                                    .addComponent(btnAddhm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(btnBuscarhm, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))))
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCarrega, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                            .addComponent(btnAddhm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(btnBuscarhm, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(btnCarregaHash, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCarregaLinkedList)
+                .addContainerGap(7, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,9 +174,11 @@ public class FormSistema extends javax.swing.JFrame {
                 .addComponent(btnCarrega, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCarrega1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCarrega2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(btnCarregaLinkedList, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCarregaHash, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -210,10 +224,10 @@ public class FormSistema extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -241,19 +255,14 @@ public class FormSistema extends javax.swing.JFrame {
         void carregaDadosBusca(){
         String csvFile = "dadosBusca.csv";
         String line = "";
-        String[] pessoa = null;
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             while ((line = br.readLine()) != null) {
-                 pessoa = line.split(";");
-                 Pessoa p = new Pessoa();
-                 p.setNome(pessoa[0]);
-                 p.setCpf(pessoa[1]);
-                System.out.println(p);
+                 arrayBusca.add(line);
+                //System.out.println(line);
             }// fim percurso no arquivo
         } catch (IOException e) {
             e.printStackTrace();
         }
- 
     }
     
     void mostra(){
@@ -270,6 +279,25 @@ public class FormSistema extends javax.swing.JFrame {
         txtCpf.setText("");
         txtNome.setText("");
         txtNome.requestFocus();
+    }
+    
+    void salvaArquivo(){
+        String csvFile = "dadosFinal.csv";
+        
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(csvFile));
+            
+            for(String cpf : arrayBusca){
+                if(meuHash.containsKey(cpf))
+                    bw.write(cpf + " | Existe");
+                else
+                    bw.write(cpf + " | Não Existe");
+
+                bw.newLine();  
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+         }
     }
     
     private void btnBuscarhmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarhmActionPerformed
@@ -299,13 +327,66 @@ public class FormSistema extends javax.swing.JFrame {
        mostra();
     }//GEN-LAST:event_btnCarregaActionPerformed
 
-    private void btnCarrega1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrega1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCarrega1ActionPerformed
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        salvaArquivo();
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
-    private void btnCarrega2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrega2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCarrega2ActionPerformed
+    private void btnCarregaLinkedListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregaLinkedListActionPerformed
+         if(minhaLista.isEmpty())
+            JOptionPane.showMessageDialog(null, "Tabela Vazia!");
+
+        
+        arrayBusca.clear();
+        carregaDadosBusca();
+        
+        int cont = 0, cpfCont = 0;
+        long tempoInicial = System.currentTimeMillis();
+        
+        for(String s:arrayBusca){
+            System.out.println(cont +  ": "+ s);
+            cont++;
+            for(Pessoa p: minhaLista){
+                if(p.getCpf().equals(s)){
+                    cpfCont++;
+                    break;
+                }
+            }            
+        }
+        
+        long tempoFinal = System.currentTimeMillis();
+        System.out.println("Cpf's encontrados: " + cpfCont);
+        double tempoGasto = (tempoFinal - tempoInicial) / 1000.00;
+        System.out.printf("LinkedList: %.3f segundos", tempoGasto);
+        
+        JOptionPane.showMessageDialog(null, "Cpf's encontrados: " + cpfCont + "\nLinkedList: " + tempoGasto + " segundos" );
+    }//GEN-LAST:event_btnCarregaLinkedListActionPerformed
+
+    private void btnCarregaHashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregaHashActionPerformed
+        if(meuHash.isEmpty())
+            JOptionPane.showMessageDialog(null, "Tabela Vazia!");
+        
+        arrayBusca.clear();
+        carregaDadosBusca();
+        
+        int cont = 0, cpfCont = 0;
+        
+        long tempoInicial = System.currentTimeMillis();
+        
+        for(String s:arrayBusca){
+                System.out.println(cont +  ": "+ s);
+                cont++;
+               
+                if(meuHash.containsKey(s))
+                    cpfCont++;      
+        }
+        
+        long tempoFinal = System.currentTimeMillis();
+        System.out.println("Cpf's encontrados: " + cpfCont);
+        double tempoGasto = (tempoFinal - tempoInicial) / 1000.00;
+        System.out.printf("Hash: %.3f segundos", tempoGasto);
+        
+        JOptionPane.showMessageDialog(null, "Cpf's encontrados: " + cpfCont + "\nHash: " + tempoGasto + " segundos" );
+    }//GEN-LAST:event_btnCarregaHashActionPerformed
 
     /**
      * @param args the command line arguments
@@ -347,8 +428,9 @@ public class FormSistema extends javax.swing.JFrame {
     private javax.swing.JButton btnAddhm;
     private javax.swing.JButton btnBuscarhm;
     private javax.swing.JButton btnCarrega;
-    private javax.swing.JButton btnCarrega1;
-    private javax.swing.JButton btnCarrega2;
+    private javax.swing.JButton btnCarregaHash;
+    private javax.swing.JButton btnCarregaLinkedList;
+    private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
